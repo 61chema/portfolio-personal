@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Porfolio personal — Chema
 
-## Getting Started
+Personal portfolio built with Next.js 16 (App Router), Tailwind CSS v4 and `next-intl` for English / Spanish localization.
 
-First, run the development server:
+## Stack
+
+- **Framework:** Next.js 16 + React 19 (App Router, Server Components by default)
+- **Styles:** Tailwind CSS v4
+- **i18n:** `next-intl` with locales `en` and `es`
+- **Animations:** `framer-motion`
+- **Icons:** `lucide-react` + custom SVG icons for GitHub / LinkedIn
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App runs on [http://localhost:3000](http://localhost:3000) and the middleware will redirect to the right locale (`/en` or `/es`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Useful scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev     # local dev server
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # eslint
+```
 
-## Learn More
+## Project layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/
+    [locale]/          # root layout, page, globals and favicon (locale-aware)
+  components/          # UI components (Hero, About, Projects, ...)
+  i18n/                # next-intl routing / request config
+  lib/                 # shared constants (social links, CV file, site URL)
+  providers/           # client-side providers (LocaleProvider)
+messages/
+  en.json              # English copy
+  es.json              # Spanish copy
+public/
+  cv_chema.pdf         # downloadable CV
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Adding a new project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit `messages/en.json` and `messages/es.json`. Inside `projects.featured`, replace any of the `placeholder` entries with:
 
-## Deploy on Vercel
+```json
+{
+  "name": "Project name",
+  "description": "What it does, the problem it solves and the most interesting technical decision.",
+  "tags": ["React", "FastAPI", "Azure"],
+  "github": "https://github.com/7arise/repo-name",
+  "live": "https://your-demo-url.com",
+  "status": "in_progress"
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`status` accepts:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `in_progress` — shows the "In Progress" badge.
+- `live` — no badge, GitHub + live links rendered.
+- `placeholder` — empty slot, shows "Coming Soon" with no links (current default).
+
+Smaller projects can be added to `projects.other` (same shape, smaller card).
+
+> Both JSON files must keep the **same structure**. If you add a new key in one, add it in the other too.

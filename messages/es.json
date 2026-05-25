@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "education": "Educación",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Chema",
+    "role": "Construyo productos con IA de principio a fin.",
+    "tagline": "Desde interfaces en React hasta servicios de inferencia en FastAPI sobre Azure — trabajo en todo el stack para entregar sistemas donde la IA hace algo real, no decorativo. Actualmente en el equipo de innovación de NTT DATA en Barcelona.",
+    "cta_work": "Ver mi trabajo",
+    "cta_contact": "Contactar"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "number": "01.",
+    "bio1": "Soy ingeniero fullstack en el equipo de innovación de NTT DATA en Barcelona. Construyo sistemas con IA de principio a fin — desde interfaces en React hasta backends en FastAPI desplegados en Azure, con capas de datos en tiempo real de por medio.",
+    "bio2": "Mi foco está en el punto donde los modelos de IA dejan de ser una demo y empiezan a ser un producto. Actualmente explorando Physical AI: sistemas donde la salida del modelo provoca algo en el mundo real, no sólo en una UI.",
+    "motto": "Seguir aprendiendo, seguir construyendo — la curiosidad crea grandes ingenieros."
+  },
+  "experience": {
+    "title": "Experiencia",
+    "number": "02.",
+    "present": "Presente",
+    "jobs": [
+      {
+        "company": "NTT DATA Europe & Latam",
+        "role": "Software Engineer – AI",
+        "period": "Dic 2025 – Presente",
+        "location": "Barcelona",
+        "bullets": [
+          "Desarrollo de funcionalidades con IA de principio a fin en un equipo pequeño de innovación — servicios de inferencia en FastAPI, interfaces en React y despliegues en Azure desde la pizarra hasta producción.",
+          "Construí un sistema de sincronización de estado en tiempo real con WebSockets sobre FastAPI — broadcasting del estado de sesión entre clientes concurrentes con entrega por debajo de 100 ms.",
+          "Llegué a las semifinales de un hackathon con un asistente de investigación con IA construido de principio a fin en 48h: ingestión de documentos, pipeline de recuperación y síntesis generada por LLM.",
+          "Profundizando en Physical AI — conectando salidas de modelos con hardware real y sistemas autónomos."
+        ],
+        "tags": ["React", "FastAPI", "Python", "MongoDB", "PostgreSQL", "Azure", "Docker", "WebSockets"]
+      },
+      {
+        "company": "Revolution Computer",
+        "role": "Técnico Informático",
+        "period": "Mar 2019 – Sep 2019",
+        "location": "Barcelona",
+        "bullets": [
+          "Diagnóstico y reparación de hardware y software.",
+          "Montaje y configuración de ordenadores desde cero.",
+          "Soporte técnico presencial a clientes."
+        ],
+        "tags": ["Hardware", "Windows", "Redes"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "number": "03.",
+    "featured_label": "Proyectos Destacados",
+    "other_label": "Otros Proyectos",
+    "in_progress": "En progreso",
+    "coming_soon": "Próximamente",
+    "github": "GitHub",
+    "live": "Demo",
+    "featured": [
+      {
+        "name": "Proyecto Uno",
+        "description": "TODO: resumen breve de qué hace el proyecto, el problema que resuelve y la decisión técnica más interesante.",
+        "tags": ["TBD"],
+        "github": "",
+        "status": "placeholder"
+      },
+      {
+        "name": "Proyecto Dos",
+        "description": "TODO: resumen breve de qué hace el proyecto, el problema que resuelve y la decisión técnica más interesante.",
+        "tags": ["TBD"],
+        "github": "",
+        "status": "placeholder"
+      },
+      {
+        "name": "Proyecto Tres",
+        "description": "TODO: resumen breve de qué hace el proyecto, el problema que resuelve y la decisión técnica más interesante.",
+        "tags": ["TBD"],
+        "github": "",
+        "status": "placeholder"
+      },
+      {
+        "name": "Proyecto Cuatro",
+        "description": "TODO: resumen breve de qué hace el proyecto, el problema que resuelve y la decisión técnica más interesante.",
+        "tags": ["TBD"],
+        "github": "",
+        "status": "placeholder"
+      }
+    ],
+    "other": []
+  },
+  "education": {
+    "title": "Educación",
+    "number": "04.",
+    "items": [
+      {
+        "institution": "CEPI-BASE",
+        "degree": "CFGS — Desarrollo de Aplicaciones con Python",
+        "period": "Sep 2021 – Oct 2024"
+      },
+      {
+        "institution": "Institut Pedralbes",
+        "degree": "CFGM — Sistemas Microinformáticos y Redes",
+        "period": "Jun 2018 – Sep 2020"
+      },
+      {
+        "institution": "Salesians Horta",
+        "degree": "ESO — Educación Secundaria Obligatoria",
+        "period": "Jun 2012 – Sep 2016"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Hablemos.",
+    "number": "05.",
+    "message": "¿Estás construyendo algo interesante? ¿Trabajando en Physical AI? O simplemente quieres intercambiar ideas — escríbeme.",
+    "email_cta": "Enviar email",
+    "download_cv": "Descargar CV"
+  },
+  "languages": {
+    "title": "Idiomas",
+    "items": [
+      { "language": "Español", "level": "Nativo" },
+      { "language": "Catalán", "level": "Nativo" },
+      { "language": "Inglés", "level": "B2 · Nivel profesional de trabajo" }
+    ]
+  },
+  "footer": {
+    "designed": "Diseñado y desarrollado por",
+    "name": "Chema"
+  },
+  "metadata": {
+    "title": "Chema | AI Software Engineer",
+    "description": "AI Software Engineer construyendo productos fullstack. React, FastAPI, Azure, Physical AI. Desde Barcelona."
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, my name is",
+    "name": "Chema",
+    "role": "I build AI products end-to-end.",
+    "tagline": "From React interfaces to FastAPI inference services on Azure — I work across the full stack to ship systems where AI does something real, not decorative. Currently at NTT DATA's innovation team in Barcelona.",
+    "cta_work": "See the projects",
+    "cta_contact": "Get in touch"
+  },
+  "about": {
+    "title": "About Me",
+    "number": "01.",
+    "bio1": "I'm a fullstack engineer at NTT DATA's innovation team in Barcelona. I build AI-powered systems end-to-end — from React interfaces to FastAPI backends deployed on Azure, with real-time data layers in between.",
+    "bio2": "My focus is the point where AI models stop being a demo and start being a product. Currently exploring Physical AI: systems where model output drives something in the real world, not just a UI.",
+    "motto": "Keep learning, keep building — curiosity makes great engineers."
+  },
+  "experience": {
+    "title": "Work Experience",
+    "number": "02.",
+    "present": "Present",
+    "jobs": [
+      {
+        "company": "NTT DATA Europe & Latam",
+        "role": "Software Engineer – AI",
+        "period": "Dec 2025 – Present",
+        "location": "Barcelona",
+        "bullets": [
+          "Develop AI-powered features end-to-end in a small innovation team — FastAPI inference services, React interfaces, and Azure deployments from whiteboard to production.",
+          "Built a real-time state synchronization system using WebSockets on FastAPI — broadcasting session state across concurrent clients with sub-100ms delivery.",
+          "Advanced to hackathon semifinals with an AI research assistant built end-to-end in 48h: document ingestion, retrieval pipeline, and LLM-generated synthesis.",
+          "Deepening work in Physical AI — connecting model outputs to real-world hardware and autonomous systems."
+        ],
+        "tags": ["React", "FastAPI", "Python", "MongoDB", "PostgreSQL", "Azure", "Docker", "WebSockets"]
+      },
+      {
+        "company": "Revolution Computer",
+        "role": "Computer Technician",
+        "period": "Mar 2019 – Sep 2019",
+        "location": "Barcelona",
+        "bullets": [
+          "Diagnosed and repaired hardware and software issues.",
+          "Assembled and configured PCs from the ground up.",
+          "Provided in-person technical support to customers."
+        ],
+        "tags": ["Hardware", "Windows", "Networking"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "number": "03.",
+    "featured_label": "Featured Projects",
+    "other_label": "Other Projects",
+    "in_progress": "In Progress",
+    "coming_soon": "Coming Soon",
+    "github": "GitHub",
+    "live": "Live",
+    "featured": [
+      {
+        "name": "Project One",
+        "description": "TODO: short summary of what this project does, the problem it solves and the most interesting technical decision.",
+        "tags": ["TBD"],
+        "github": "",
+        "status": "placeholder"
+      },
+      {
+        "name": "Project Two",
+        "description": "TODO: short summary of what this project does, the problem it solves and the most interesting technical decision.",
+        "tags": ["TBD"],
+        "github": "",
+        "status": "placeholder"
+      },
+      {
+        "name": "Project Three",
+        "description": "TODO: short summary of what this project does, the problem it solves and the most interesting technical decision.",
+        "tags": ["TBD"],
+        "github": "",
+        "status": "placeholder"
+      },
+      {
+        "name": "Project Four",
+        "description": "TODO: short summary of what this project does, the problem it solves and the most interesting technical decision.",
+        "tags": ["TBD"],
+        "github": "",
+        "status": "placeholder"
+      }
+    ],
+    "other": []
+  },
+  "education": {
+    "title": "Education",
+    "number": "04.",
+    "items": [
+      {
+        "institution": "CEPI-BASE",
+        "degree": "HNC — Python Application Development",
+        "period": "Sep 2021 – Oct 2024"
+      },
+      {
+        "institution": "Institut Pedralbes",
+        "degree": "CFGM — Microcomputer Systems & Networks",
+        "period": "Jun 2018 – Sep 2020"
+      },
+      {
+        "institution": "Salesians Horta",
+        "degree": "ESO — Secondary Education",
+        "period": "Jun 2012 – Sep 2016"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's talk.",
+    "number": "05.",
+    "message": "Building something interesting? Working on Physical AI? Or just want to exchange ideas — I'm reachable.",
+    "email_cta": "Send an email",
+    "download_cv": "Download CV"
+  },
+  "languages": {
+    "title": "Languages",
+    "items": [
+      { "language": "Spanish", "level": "Native" },
+      { "language": "Catalan", "level": "Native" },
+      { "language": "English", "level": "B2 · Professional working proficiency" }
+    ]
+  },
+  "footer": {
+    "designed": "Designed & Built by",
+    "name": "Chema"
+  },
+  "metadata": {
+    "title": "Chema | AI Software Engineer",
+    "description": "AI Software Engineer building full-stack products. React, FastAPI, Azure, Physical AI. Based in Barcelona."
+  }
+}
