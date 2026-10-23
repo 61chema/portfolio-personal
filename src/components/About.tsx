@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import AnimatedSection from './AnimatedSection'
 import SectionHeader from './SectionHeader'
+import TechMarquee from './TechMarquee'
 import { GitHubIcon, LinkedInIcon } from './icons/SocialIcons'
 import { SOCIAL } from '@/lib/social'
 
@@ -57,21 +58,16 @@ export default function About() {
 
         <AnimatedSection delay={0.2}>
           <div className="space-y-6">
-            {techStack.map((group) => (
+            {techStack.map((group, index) => (
               <div key={group.category}>
                 <h3 className="font-mono text-xs text-accent tracking-widest uppercase mb-3">
                   {group.category}
                 </h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((tech) => (
-                    <span
-                      key={tech}
-                      className="font-mono text-xs text-text-secondary bg-navy-light border border-navy-lighter px-3 py-1.5 rounded hover:border-accent hover:text-accent transition-all duration-200 cursor-default"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <TechMarquee
+                  items={group.items}
+                  direction={index % 2 === 0 ? 'left' : 'right'}
+                  speed={22 + index * 3}
+                />
               </div>
             ))}
           </div>
