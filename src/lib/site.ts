@@ -1,8 +1,8 @@
-// Public address of the site, used for metadata, the sitemap and robots.txt (server only).
-// On Vercel it comes from the project's production domain, which is the custom domain once
-// one is added, or the free *.vercel.app one until then. SITE_URL overrides it anywhere else.
+// Public address of the site, used for metadata, the share image, the sitemap and robots.txt
+// (server only). Change PRODUCTION_URL when the site moves to its own domain; the SITE_URL
+// environment variable overrides it without touching code.
 
-const vercelDomain = process.env.VERCEL_PROJECT_PRODUCTION_URL
+const PRODUCTION_URL = 'https://61chema.vercel.app'
 
 export const SITE_URL =
-  process.env.SITE_URL ?? (vercelDomain ? `https://${vercelDomain}` : 'http://localhost:3000')
+  process.env.SITE_URL ?? (process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : PRODUCTION_URL)
