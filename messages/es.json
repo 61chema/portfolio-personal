@@ -3,46 +3,46 @@
     "about": "Sobre mí",
     "experience": "Experiencia",
     "projects": "Proyectos",
-    "education": "Educación",
     "contact": "Contacto"
   },
   "hero": {
-    "greeting": "Hola, soy",
     "name": "Chema",
-    "role": "Construyo productos con IA de principio a fin.",
-    "tagline": "Desde interfaces en React hasta servicios de inferencia en FastAPI sobre Azure — trabajo en todo el stack para entregar sistemas donde la IA hace algo real, no decorativo. Actualmente en el equipo de innovación de NTT DATA en Barcelona.",
-    "cta_work": "Ver mi trabajo",
-    "cta_contact": "Contactar"
+    "tagline": "Desarrollo pruebas de concepto con IA en el Innovation Center de NTT DATA, en Barcelona. Lidero una plataforma que usa agentes de IA para preparar visitas en pantallas reales, y trabajo en un proyecto de investigación con robots.",
+    "surname": "Rodríguez",
+    "status": "NTT DATA Innovation Center",
+    "role_label": "AI Software Engineer",
+    "location": "Barcelona, España"
   },
   "about": {
     "title": "Sobre mí",
     "number": "01.",
-    "bio1": "Soy ingeniero fullstack en el equipo de innovación de NTT DATA en Barcelona. Construyo sistemas con IA de principio a fin — desde interfaces en React hasta backends en FastAPI desplegados en Azure, con capas de datos en tiempo real de por medio.",
-    "bio2": "Mi foco está en el punto donde los modelos de IA dejan de ser una demo y empiezan a ser un producto. Actualmente explorando Physical AI: sistemas donde la salida del modelo provoca algo en el mundo real, no sólo en una UI.",
-    "motto": "Seguir aprendiendo, seguir construyendo — la curiosidad crea grandes ingenieros."
+    "bio1": "Empecé reparando y montando ordenadores, y de ahí pasé a programar. Me formé primero en sistemas y redes, y después en desarrollo de aplicaciones con Python.",
+    "bio2": "Hoy estoy en el Innovation Center de NTT DATA, donde convertimos ideas en pruebas de concepto con IA que funcionan en espacios y dispositivos reales. Me muevo por todo el stack: React, FastAPI, Azure y los agentes de IA que hay detrás.",
+    "motto": "Aprendo mejor construyendo algo que funcione."
   },
   "experience": {
     "title": "Experiencia",
-    "number": "02.",
+    "number": "03.",
     "present": "Presente",
     "jobs": [
       {
         "company": "NTT DATA Europe & Latam",
-        "role": "Software Engineer – AI",
-        "period": "Dic 2025 – Presente",
+        "role": "AI Software Engineer",
+        "period": "Dic 2025 - Presente",
         "location": "Barcelona",
         "bullets": [
-          "Desarrollo de funcionalidades con IA de principio a fin en un equipo pequeño de innovación — servicios de inferencia en FastAPI, interfaces en React y despliegues en Azure desde la pizarra hasta producción.",
-          "Construí un sistema de sincronización de estado en tiempo real con WebSockets sobre FastAPI — broadcasting del estado de sesión entre clientes concurrentes con entrega por debajo de 100 ms.",
-          "Llegué a las semifinales de un hackathon con un asistente de investigación con IA construido de principio a fin en 48h: ingestión de documentos, pipeline de recuperación y síntesis generada por LLM.",
-          "Profundizando en Physical AI — conectando salidas de modelos con hardware real y sistemas autónomos."
+          "Desarrollador principal de Agentic Space Demo, una plataforma de cartelería digital con agentes de IA.",
+          "Stand Allocation Optimizer, una prueba de concepto para aeropuertos desarrollada junto a una compañera.",
+          "Proyecto de investigación de robótica con un manipulador móvil.",
+          "Sincronización de estado en tiempo real con WebSockets sobre FastAPI: cada cliente conectado recibe los cambios en menos de 100 ms.",
+          "Semifinalista en un hackathon con un asistente de investigación con IA hecho en 48 horas: lee documentos, encuentra los fragmentos relevantes y responde con un LLM."
         ],
-        "tags": ["React", "FastAPI", "Python", "MongoDB", "PostgreSQL", "Azure", "Docker", "WebSockets"]
+        "tags": ["React", "TypeScript", "Python", "FastAPI", "Azure", "Azure OpenAI", "Terraform", "Docker"]
       },
       {
         "company": "Revolution Computer",
         "role": "Técnico Informático",
-        "period": "Mar 2019 – Sep 2019",
+        "period": "Mar 2019 - Sep 2019",
         "location": "Barcelona",
         "bullets": [
           "Diagnóstico y reparación de hardware y software.",
@@ -55,71 +55,79 @@
   },
   "projects": {
     "title": "Proyectos",
-    "number": "03.",
-    "featured_label": "Proyectos Destacados",
-    "other_label": "Otros Proyectos",
+    "number": "02.",
+    "featured_label": "Proyectos destacados",
+    "other_label": "Otros proyectos",
     "in_progress": "En progreso",
     "coming_soon": "Próximamente",
     "github": "GitHub",
     "live": "Demo",
+    "problem_label": "El problema",
+    "approach_label": "Cómo lo hice",
     "featured": [
       {
-        "name": "Proyecto Uno",
-        "description": "TODO: resumen breve de qué hace el proyecto, el problema que resuelve y la decisión técnica más interesante.",
-        "tags": ["TBD"],
+        "name": "Agentic Space Demo",
+        "context": "NTT DATA Innovation Center. Desarrollador principal, dic 2025 - actualidad",
+        "description": "Plataforma de cartelería digital con agentes de IA. Subes tu contenido, la IA lo entiende, monta una historia con él, la reparte por las pantallas de un espacio y la pone en marcha. Todo se puede hacer hablando con un asistente.",
+        "problem": "Preparar la visita de un cliente al Innovation Center era manual: elegir vídeos y presentaciones, decidir qué va en cada pantalla y configurarlas una por una. Llevaba tiempo y dependía de una persona que supiera hacerlo.",
+        "approach": [
+          "Al subir un archivo, la IA lo procesa sola: transcribe los vídeos con Whisper, describe las imágenes, extrae el texto de PDFs y PowerPoints y lo indexa con embeddings para buscar por significado.",
+          "Un orquestador con agentes especialistas escribe el guion de la visita y decide qué se ve en cada pantalla según su tamaño y orientación.",
+          "El asistente hace solo tres preguntas a un clic (dónde, en qué pantallas y cuándo) y no cambia nada hasta que confirmas el plan.",
+          "Plano interactivo del espacio con las pantallas en su sitio real, su estado en vivo y la ruta de la visita.",
+          "Control del gasto de IA: cada llamada se carga al presupuesto de una persona, con límites y aprobaciones."
+        ],
+        "tags": [
+          "Python",
+          "FastAPI",
+          "React",
+          "Azure OpenAI",
+          "Agentes",
+          "MCP",
+          "Embeddings",
+          "Cosmos DB",
+          "Terraform"
+        ],
         "github": "",
-        "status": "placeholder"
+        "status": "in_progress"
       },
       {
-        "name": "Proyecto Dos",
-        "description": "TODO: resumen breve de qué hace el proyecto, el problema que resuelve y la decisión técnica más interesante.",
-        "tags": ["TBD"],
+        "name": "Stand Allocation Optimizer",
+        "context": "NTT DATA Innovation Center. PoC junto a una compañera, jun - sep 2026",
+        "description": "Prueba de concepto que usa machine learning y optimización matemática para decidir en qué stand aparca cada avión de un aeropuerto y coordinar su movimiento en tierra. Una consola de operaciones carga un día completo de vuelos, detecta los conflictos, los explica y los resuelve.",
+        "problem": "Repartir los stands de un aeropuerto grande provoca solapes, bloqueos al hacer pushback y cruces en las calles de rodaje. Hacía falta ver el día entero de un vistazo, encontrar los conflictos y proponer un plan mejor.",
+        "approach": [
+          "Pipeline de datos geoespaciales con OpenStreetMap: inventario real de stands y rutas de rodaje calculadas con Dijkstra.",
+          "Optimizador de stands con OR-Tools (CP-SAT), desarrollado junto a mi compañera: reasigna los stands para eliminar conflictos y usar menos posiciones remotas.",
+          "Detección de conflictos en calles de rodaje y pistas, y un optimizador que ordena el paso de los aviones con esperas acotadas.",
+          "La consola de operaciones en React: mapa satélite (Mapbox), vista 3D en Three.js y un diagrama de Gantt en D3, todo sincronizado con el mismo reloj. Y el despliegue en Azure con Docker y Terraform.",
+          "El modelo de machine learning que predice el tiempo de cada avión en el stand lo desarrolló mi compañera."
+        ],
+        "tags": [
+          "React",
+          "TypeScript",
+          "Three.js",
+          "Mapbox",
+          "D3",
+          "FastAPI",
+          "OR-Tools",
+          "Azure",
+          "Terraform"
+        ],
         "github": "",
-        "status": "placeholder"
-      },
-      {
-        "name": "Proyecto Tres",
-        "description": "TODO: resumen breve de qué hace el proyecto, el problema que resuelve y la decisión técnica más interesante.",
-        "tags": ["TBD"],
-        "github": "",
-        "status": "placeholder"
-      },
-      {
-        "name": "Proyecto Cuatro",
-        "description": "TODO: resumen breve de qué hace el proyecto, el problema que resuelve y la decisión técnica más interesante.",
-        "tags": ["TBD"],
-        "github": "",
-        "status": "placeholder"
+        "status": "live"
       }
     ],
     "other": []
   },
-  "education": {
-    "title": "Educación",
-    "number": "04.",
-    "items": [
-      {
-        "institution": "CEPI-BASE",
-        "degree": "CFGS — Desarrollo de Aplicaciones con Python",
-        "period": "Sep 2021 – Oct 2024"
-      },
-      {
-        "institution": "Institut Pedralbes",
-        "degree": "CFGM — Sistemas Microinformáticos y Redes",
-        "period": "Jun 2018 – Sep 2020"
-      },
-      {
-        "institution": "Salesians Horta",
-        "degree": "ESO — Educación Secundaria Obligatoria",
-        "period": "Jun 2012 – Sep 2016"
-      }
-    ]
-  },
   "contact": {
     "title": "Hablemos.",
-    "number": "05.",
-    "message": "¿Estás construyendo algo interesante? ¿Trabajando en Physical AI? O simplemente quieres intercambiar ideas — escríbeme.",
-    "email_cta": "Enviar email",
+    "number": "04.",
+    "message": "¿Estás construyendo algo interesante, trabajas en Physical AI o te apetece intercambiar ideas? Escríbeme.",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "location_label": "Ubicación",
+    "location": "Barcelona, España",
     "download_cv": "Descargar CV"
   },
   "languages": {
@@ -127,7 +135,7 @@
     "items": [
       { "language": "Español", "level": "Nativo" },
       { "language": "Catalán", "level": "Nativo" },
-      { "language": "Inglés", "level": "B2 · Nivel profesional de trabajo" }
+      { "language": "Inglés", "level": "B2, nivel profesional" }
     ]
   },
   "footer": {
@@ -135,7 +143,7 @@
     "name": "Chema"
   },
   "metadata": {
-    "title": "Chema | AI Software Engineer",
-    "description": "AI Software Engineer construyendo productos fullstack. React, FastAPI, Azure, Physical AI. Desde Barcelona."
+    "title": "Chema Rodríguez | AI Software Engineer",
+    "description": "Ingeniero de software en el Innovation Center de NTT DATA, en Barcelona. Agentes de IA, React, FastAPI y Azure."
   }
 }

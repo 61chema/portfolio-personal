@@ -10,7 +10,12 @@ type ProjectStatus = 'in_progress' | 'live' | 'placeholder'
 
 interface FeaturedProject {
   name: string
+  /** Where and in which role, e.g. "NTT DATA Innovation Center. Lead developer" */
+  context?: string
   description: string
+  /** Optional case-study blocks, shown side by side under the description */
+  problem?: string
+  approach?: string[]
   tags: string[]
   github: string
   live?: string
@@ -31,7 +36,7 @@ export default function Projects() {
   const other = t.raw('other') as OtherProject[]
 
   return (
-    <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-28 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
       <AnimatedSection>
         <SectionHeader number={t('number')} title={t('title')} />
       </AnimatedSection>
@@ -39,7 +44,7 @@ export default function Projects() {
       {/* Featured projects */}
       <div className="space-y-8 mb-20">
         <AnimatedSection>
-          <h3 className="font-mono text-xs text-text-secondary tracking-widest uppercase mb-8">
+          <h3 className="font-mono text-[13px] text-text-secondary tracking-widest uppercase mb-8">
             {t('featured_label')}
           </h3>
         </AnimatedSection>
@@ -58,18 +63,21 @@ export default function Projects() {
                 <div className="flex items-start justify-between mb-4 gap-4">
                   <div>
                     {project.status === 'in_progress' && (
-                      <span className="font-mono text-xs text-accent bg-accent/10 border border-accent/30 px-2 py-0.5 rounded mb-3 inline-block">
+                      <span className="font-mono text-[13px] text-accent bg-accent/10 border border-accent/30 px-2 py-0.5 rounded mb-3 inline-block">
                         {t('in_progress')}
                       </span>
                     )}
                     {project.status === 'placeholder' && (
-                      <span className="font-mono text-xs text-text-secondary bg-navy border border-navy-lighter px-2 py-0.5 rounded mb-3 inline-block">
+                      <span className="font-mono text-[13px] text-text-secondary bg-navy border border-navy-lighter px-2 py-0.5 rounded mb-3 inline-block">
                         {t('coming_soon')}
                       </span>
                     )}
-                    <h3 className="font-heading font-bold text-text-primary text-xl mt-2">
+                    <h3 className="font-display font-semibold text-text-primary text-2xl md:text-3xl tracking-[-0.02em] mt-2">
                       {project.name}
                     </h3>
+                    {project.context && (
+                      <p className="font-mono text-sm text-accent mt-2">{project.context}</p>
+                    )}
                   </div>
                   {!isPlaceholder && (
                     <div className="flex items-center gap-3 text-text-secondary shrink-0">
@@ -99,15 +107,44 @@ export default function Projects() {
                   )}
                 </div>
 
-                <p className="text-text-secondary leading-relaxed mb-6">
+                <p className="text-text-primary/90 text-base md:text-[17px] leading-[1.8] mb-8 max-w-3xl">
                   {project.description}
                 </p>
+
+                {/* Case study: the problem on the left, how I solved it on the right */}
+                {(project.problem || project.approach) && (
+                  <div className="grid grid-cols-1 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 md:gap-12 border-t border-line pt-8 mb-8">
+                    {project.problem && (
+                      <div>
+                        <h4 className="font-mono text-[13px] uppercase tracking-[0.18em] text-text-secondary mb-3">
+                          {t('problem_label')}
+                        </h4>
+                        <p className="text-text-body text-base leading-[1.75]">{project.problem}</p>
+                      </div>
+                    )}
+                    {project.approach && (
+                      <div>
+                        <h4 className="font-mono text-[13px] uppercase tracking-[0.18em] text-text-secondary mb-3">
+                          {t('approach_label')}
+                        </h4>
+                        <ul className="space-y-2.5">
+                          {project.approach.map((step, i) => (
+                            <li key={i} className="text-text-body text-base leading-[1.75] flex gap-3">
+                              <span className="text-accent mt-1 flex-shrink-0">▹</span>
+                              <span>{step}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="font-mono text-xs text-accent/70 bg-accent/10 px-2 py-0.5 rounded"
+                      className="font-mono text-[13px] text-accent/80 bg-accent/10 px-2 py-0.5 rounded"
                     >
                       {tag}
                     </span>
@@ -123,7 +160,7 @@ export default function Projects() {
       {other.length > 0 && (
         <>
           <AnimatedSection>
-            <h3 className="font-mono text-xs text-text-secondary tracking-widest uppercase mb-8">
+            <h3 className="font-mono text-[13px] text-text-secondary tracking-widest uppercase mb-8">
               {t('other_label')}
             </h3>
           </AnimatedSection>

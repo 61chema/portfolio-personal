@@ -16,7 +16,7 @@ export default function Experience() {
   }>
 
   return (
-    <section id="experience" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="experience" className="py-28 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
       <AnimatedSection>
         <SectionHeader number={t('number')} title={t('title')} />
       </AnimatedSection>
@@ -41,21 +41,21 @@ export default function Experience() {
                 <div className="bg-navy-light border border-navy-lighter rounded-lg p-6 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
-                      <h3 className="font-heading font-bold text-text-primary text-lg">
+                      <h3 className="font-display font-semibold text-text-primary text-2xl md:text-3xl tracking-[-0.02em]">
                         {job.role}
                       </h3>
-                      <p className="text-accent font-mono text-sm mt-0.5">
-                        {job.company} · {job.location}
+                      <p className="text-accent font-mono text-[15px] mt-2">
+                        {job.company}, {job.location}
                       </p>
                     </div>
-                    <span className="font-mono text-xs text-text-secondary whitespace-nowrap bg-navy px-3 py-1 rounded border border-navy-lighter">
+                    <span className="font-mono text-[13px] text-text-secondary whitespace-nowrap bg-navy px-3 py-1 rounded border border-navy-lighter">
                       {job.period}
                     </span>
                   </div>
 
                   <ul className="space-y-2 mb-4">
                     {job.bullets.map((bullet, i) => (
-                      <li key={i} className="text-text-secondary text-sm flex gap-3">
+                      <li key={i} className="text-text-body text-base leading-[1.75] flex gap-3">
                         <span className="text-accent mt-1 flex-shrink-0">▹</span>
                         <span>{bullet}</span>
                       </li>
@@ -66,7 +66,7 @@ export default function Experience() {
                     {job.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="font-mono text-xs text-accent/70 bg-accent/10 px-2 py-0.5 rounded"
+                        className="font-mono text-[13px] text-accent/80 bg-accent/10 px-2 py-0.5 rounded"
                       >
                         {tag}
                       </span>

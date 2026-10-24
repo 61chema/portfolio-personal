@@ -54,7 +54,7 @@ Edit `messages/en.json` and `messages/es.json`. Inside `projects.featured`, repl
   "name": "Project name",
   "description": "What it does, the problem it solves and the most interesting technical decision.",
   "tags": ["React", "FastAPI", "Azure"],
-  "github": "https://github.com/7arise/repo-name",
+  "github": "https://github.com/61chema/repo-name",
   "live": "https://your-demo-url.com",
   "status": "in_progress"
 }

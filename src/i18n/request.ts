@@ -10,6 +10,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   return {
     locale,
+    // Explicit default so dates/times render consistently on server and client.
+    timeZone: 'Europe/Madrid',
     messages: (await import(`../../messages/${locale}.json`)).default,
   }
 })

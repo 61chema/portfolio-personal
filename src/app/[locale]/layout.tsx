@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
@@ -17,6 +17,13 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains',
+  display: 'swap',
+})
+
+// Display font for the big name in the hero
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space',
   display: 'swap',
 })
 
@@ -68,11 +75,12 @@ export default async function LocaleLayout({
     notFound()
   }
 
-  const messages = await getMessages()
+  // Pass the locale explicitly: without it next-intl falls back to the default locale.
+  const messages = await getMessages({ locale })
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-body text-text-primary antialiased`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} font-body text-text-primary antialiased`}>
         <LocaleProvider initialLocale={locale as 'en' | 'es'} initialMessages={messages}>
           <CursorSpotlight />
           {children}

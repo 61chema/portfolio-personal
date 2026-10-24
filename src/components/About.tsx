@@ -18,14 +18,15 @@ export default function About() {
   const t = useTranslations('about')
 
   return (
-    <section id="about" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="about" className="py-28 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
       <AnimatedSection>
         <SectionHeader number={t('number')} title={t('title')} />
       </AnimatedSection>
 
-      <div className="grid md:grid-cols-2 gap-12 items-start">
+      {/* grid-cols-1 caps the mobile column at screen width (the marquees would stretch it otherwise) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <AnimatedSection delay={0.1}>
-          <div className="space-y-4 text-text-secondary leading-relaxed">
+          <div className="space-y-5 text-text-body text-base md:text-[17px] leading-[1.85]">
             <p>{t('bio1')}</p>
             <p>{t('bio2')}</p>
             <p className="font-mono text-accent text-sm mt-6 border-l-2 border-accent pl-4">
@@ -60,7 +61,7 @@ export default function About() {
           <div className="space-y-6">
             {techStack.map((group, index) => (
               <div key={group.category}>
-                <h3 className="font-mono text-xs text-accent tracking-widest uppercase mb-3">
+                <h3 className="font-mono text-[13px] text-accent tracking-widest uppercase mb-3">
                   {group.category}
                 </h3>
                 <TechMarquee

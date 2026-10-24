@@ -30,7 +30,7 @@ export default function TechMarquee({ items, direction = 'left', speed = 24 }: T
         {track.map((tech, idx) => (
           <span
             key={`${tech}-${idx}`}
-            className="shrink-0 font-mono text-xs text-text-secondary bg-navy-light border border-navy-lighter px-3 py-1.5 rounded hover:border-accent hover:text-accent transition-all duration-200 cursor-default"
+            className="shrink-0 font-mono text-[13px] text-text-secondary bg-navy-light border border-navy-lighter px-3 py-1.5 rounded hover:border-accent hover:text-accent transition-all duration-200 cursor-default"
           >
             {tech}
           </span>

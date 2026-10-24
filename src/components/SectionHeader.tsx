@@ -3,14 +3,14 @@ interface SectionHeaderProps {
   title: string
 }
 
+/** Big section title with its number as a small label above, sized to match the hero. */
 export default function SectionHeader({ number, title }: SectionHeaderProps) {
   return (
-    <div className="flex items-center gap-4 mb-12">
-      <span className="font-mono text-accent text-sm">{number}</span>
-      <h2 className="font-heading text-2xl md:text-3xl font-bold text-text-primary">
+    <div className="mb-14 md:mb-20">
+      <span className="font-mono text-[13px] tracking-[0.18em] text-accent">{number}</span>
+      <h2 className="mt-4 font-display text-5xl md:text-[4rem] font-semibold leading-[1.05] tracking-[-0.03em] text-text-primary">
         {title}
       </h2>
-      <div className="flex-1 h-px bg-navy-lighter max-w-xs" />
     </div>
   )
 }

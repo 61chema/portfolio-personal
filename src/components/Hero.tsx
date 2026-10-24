@@ -1,107 +1,106 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion, type Variants } from 'framer-motion'
 import { useTranslations } from 'next-intl'
-import { ArrowDown } from 'lucide-react'
-import HeroScene from './hero-scene/HeroScene'
+import HeroBackground from './HeroBackground'
+
+const GLYPHS = '!<>-_\\/[]{}=+*^?#01'
+
+/**
+ * Shows `text` as random glyphs that "decrypt" letter by letter into the real text.
+ * Runs once per text change; skipped when the user prefers reduced motion.
+ */
+function useDecrypt(text: string) {
+  const [output, setOutput] = useState(text)
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setOutput(text)
+      return
+    }
+
+    let frame = 0
+    const timer = setInterval(() => {
+      frame++
+      // Each letter locks in a bit later than the previous one
+      const next = text
+        .split('')
+        .map((char, i) => {
+          if (char === ' ' || frame > 6 + i) return char
+          return GLYPHS[Math.floor(Math.random() * GLYPHS.length)]
+        })
+        .join('')
+      setOutput(next)
+      if (next === text) clearInterval(timer)
+    }, 40)
+
+    return () => clearInterval(timer)
+  }, [text])
+
+  return output
+}
 
 export default function Hero() {
   const t = useTranslations('hero')
+  const status = useDecrypt(t('status'))
 
+  // One orchestrated entrance: the blocks appear one after another on load
   const containerVariants: Variants = {
     hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.15 },
-    },
+    visible: { transition: { staggerChildren: 0.12 } },
   }
-
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
   }
 
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex flex-col justify-center px-6 max-w-6xl mx-auto pt-0 -mt-16"
-    >
-      <div className="grid md:grid-cols-[1.3fr_1fr] items-center gap-8">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="max-w-3xl"
-        >
-          <motion.p
-            variants={itemVariants}
-            className="font-mono text-accent text-sm mb-4 tracking-wider"
-          >
-            {t('greeting')}
-          </motion.p>
+    <section id="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+      {/* Embedding-space animation, drawn behind the content */}
+      <HeroBackground />
 
-          <motion.h1
-            variants={itemVariants}
-            className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-text-primary leading-tight mb-4"
-          >
-            {t('name')}.
-          </motion.h1>
-
-          <motion.h2
-            variants={itemVariants}
-            className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-secondary leading-tight mb-6"
-          >
-            {t('role')}.
-          </motion.h2>
-
-          <motion.p
-            variants={itemVariants}
-            className="text-text-secondary text-lg max-w-xl mb-10 leading-relaxed"
-          >
-            {t('tagline')}
-          </motion.p>
-
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap gap-4"
-          >
-            <a
-              href="#projects"
-              className="group inline-flex items-center gap-2 border border-accent text-accent px-6 py-3 rounded font-mono text-sm hover:bg-accent/10 transition-all duration-200"
-            >
-              {t('cta_work')}
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 text-text-secondary hover:text-accent px-6 py-3 font-mono text-sm transition-colors duration-200"
-            >
-              {t('cta_contact')} →
-            </a>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-          className="hidden md:flex justify-center md:justify-end"
-        >
-          <HeroScene />
-        </motion.div>
-      </div>
-
-      {/* Scroll hint */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-secondary"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative w-full max-w-7xl mx-auto px-6 md:px-12 pt-28 pb-16"
       >
-        <span className="font-mono text-xs tracking-widest">scroll</span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+        <motion.p
+          variants={itemVariants}
+          className="flex items-center gap-3 font-mono text-[13px] uppercase tracking-[0.18em] text-text-secondary"
         >
-          <ArrowDown size={16} />
+          <span className="live-dot h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+          <span aria-label={t('status')}>{status}</span>
+        </motion.p>
+
+        {/* Big name, two lines; the surname carries the accent colour */}
+        <motion.h1
+          variants={itemVariants}
+          className="mt-8 font-display font-bold leading-[0.88] tracking-[-0.04em] text-[clamp(3.5rem,11vw,10.5rem)]"
+        >
+          <span className="block text-text-primary">{t('name')}</span>
+          <span className="block text-accent">
+            {t('surname')}
+            <span
+              className="caret-blink ml-3 inline-block h-[0.72em] w-[0.12em] translate-y-[0.06em] bg-accent"
+              aria-hidden="true"
+            />
+          </span>
+        </motion.h1>
+
+        <motion.hr variants={itemVariants} className="mt-14 border-line" />
+
+        {/* Bottom row: role + intro on the left, location on the right */}
+        <motion.div
+          variants={itemVariants}
+          className="mt-8 grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end"
+        >
+          <div className="max-w-xl">
+            <p className="font-mono text-[13px] uppercase tracking-[0.18em] text-accent">{t('role_label')}</p>
+            <p className="mt-4 text-base md:text-lg leading-relaxed text-text-body">{t('tagline')}</p>
+          </div>
+          <p className="font-mono text-[13px] tracking-[0.12em] text-text-secondary">{t('location')}</p>
         </motion.div>
       </motion.div>
     </section>

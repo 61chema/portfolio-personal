@@ -49,7 +49,7 @@ export function LocaleProvider({
 
   return (
     <LocaleContext.Provider value={{ locale, setLocale: handleSetLocale }}>
-      <NextIntlClientProvider messages={messages} locale={locale}>
+      <NextIntlClientProvider messages={messages} locale={locale} timeZone="Europe/Madrid">
         {children}
       </NextIntlClientProvider>
     </LocaleContext.Provider>
