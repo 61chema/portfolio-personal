@@ -156,7 +156,7 @@ export default function Projects() {
         })}
       </div>
 
-      {/* Other projects — only render the block if there is at least one entry */}
+      {/* Other projects, only render the block if there is at least one entry */}
       {other.length > 0 && (
         <>
           <AnimatedSection>

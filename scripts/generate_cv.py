@@ -37,7 +37,7 @@ EXPERIENCE = [
         "org": "NTT DATA Europe &amp; Latam",
         "place": "Barcelona, Spain",
         "role": "AI Software Engineer, Innovation Center",
-        "dates": "Dec 2025 – Present",
+        "dates": "Dec 2025 - Present",
         "bullets": [
             "Lead developer of Agentic Space Demo, a digital signage platform driven by AI agents (see Projects).",
             "Co-developed Stand Allocation Optimizer, an airport operations proof of concept (see Projects).",
@@ -52,7 +52,7 @@ EXPERIENCE = [
         "org": "Revolution Computer",
         "place": "Barcelona, Spain",
         "role": "Computer Technician",
-        "dates": "Mar 2019 – Sep 2019",
+        "dates": "Mar 2019 - Sep 2019",
         "bullets": [
             "Diagnosed and repaired hardware and software issues; assembled and configured PCs from scratch.",
             "Provided in-person technical support to customers.",
@@ -64,7 +64,7 @@ PROJECTS = [
     {
         "name": "Agentic Space Demo",
         "context": "Lead developer",
-        "dates": "Dec 2025 – Present",
+        "dates": "Dec 2025 - Present",
         "stack": "Python, FastAPI, React, Azure OpenAI, AI agents, MCP, embeddings, Cosmos DB, Terraform",
         "bullets": [
             "Automated the preparation of client visits, previously a manual process of choosing videos and "
@@ -81,7 +81,7 @@ PROJECTS = [
     {
         "name": "Stand Allocation Optimizer",
         "context": "Built with a teammate",
-        "dates": "Jun 2026 – Sep 2026",
+        "dates": "Jun 2026 - Sep 2026",
         "stack": "React, TypeScript, Three.js, Mapbox, D3, FastAPI, OR-Tools, Azure, Docker, Terraform",
         "bullets": [
             "Proof of concept that assigns aircraft to stands and coordinates ground movement for a full day "
@@ -100,13 +100,13 @@ EDUCATION = [
         "org": "CEPI-BASE",
         "place": "Barcelona, Spain",
         "role": "Higher Vocational Degree (CFGS) in Application Development with Python",
-        "dates": "Sep 2021 – Oct 2024",
+        "dates": "Sep 2021 - Oct 2024",
     },
     {
         "org": "Institut Pedralbes",
         "place": "Barcelona, Spain",
         "role": "Intermediate Vocational Degree (CFGM) in Microcomputer Systems and Networks",
-        "dates": "Jun 2018 – Sep 2020",
+        "dates": "Jun 2018 - Sep 2020",
     },
 ]
 
@@ -225,7 +225,7 @@ def build():
         rightMargin=MARGIN,
         topMargin=1.3 * cm,
         bottomMargin=1.3 * cm,
-        title=f"{NAME} – CV",
+        title=f"{NAME} - CV",
         author=NAME,
     )
     doc.build(story)

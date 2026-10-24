@@ -1,4 +1,4 @@
-# Porfolio personal — Chema
+# Porfolio personal, Chema
 
 Personal portfolio built with Next.js 16 (App Router) and Tailwind CSS v4. English only; the copy lives in `messages/en.json` (read through `next-intl`).
 
@@ -60,8 +60,8 @@ Edit `messages/en.json`. Inside `projects.featured`, replace any of the `placeho
 
 `status` accepts:
 
-- `in_progress` — shows the "In Progress" badge.
-- `live` — no badge, GitHub + live links rendered.
-- `placeholder` — empty slot, shows "Coming Soon" with no links (current default).
+- `in_progress` - shows the "In Progress" badge.
+- `live` - no badge, GitHub + live links rendered.
+- `placeholder` - empty slot, shows "Coming Soon" with no links (current default).
 
 Smaller projects can be added to `projects.other` (same shape, smaller card).

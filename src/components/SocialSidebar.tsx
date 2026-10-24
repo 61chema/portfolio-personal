@@ -29,7 +29,7 @@ const leftLinks = [
 export default function SocialSidebar() {
   return (
     <>
-      {/* Left sidebar — social icons */}
+      {/* Left sidebar, social icons */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -51,7 +51,7 @@ export default function SocialSidebar() {
         <div className="w-px h-20 bg-text-secondary/30" />
       </motion.div>
 
-      {/* Right sidebar — CV download */}
+      {/* Right sidebar, CV download */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
