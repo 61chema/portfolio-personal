@@ -43,7 +43,7 @@ function useDecrypt(text: string) {
 
 export default function Hero() {
   const t = useTranslations('hero')
-  const status = useDecrypt(t('status'))
+  const role = useDecrypt(t('role_label'))
 
   // One orchestrated entrance: the blocks appear one after another on load
   const containerVariants: Variants = {
@@ -68,10 +68,10 @@ export default function Hero() {
       >
         <motion.p
           variants={itemVariants}
-          className="flex items-center gap-3 font-mono text-[13px] uppercase tracking-[0.18em] text-text-secondary"
+          className="flex items-center gap-3 font-mono text-[13px] uppercase tracking-[0.18em] text-text-primary"
         >
           <span className="live-dot h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-          <span aria-label={t('status')}>{status}</span>
+          <span aria-label={t('role_label')}>{role}</span>
         </motion.p>
 
         {/* Big name, two lines; the surname carries the accent colour */}
@@ -91,15 +91,12 @@ export default function Hero() {
 
         <motion.hr variants={itemVariants} className="mt-14 border-line" />
 
-        {/* Bottom row: role + intro on the left, location on the right */}
+        {/* Bottom row: intro on the left, location on the right */}
         <motion.div
           variants={itemVariants}
           className="mt-8 grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end"
         >
-          <div className="max-w-xl">
-            <p className="font-mono text-[13px] uppercase tracking-[0.18em] text-accent">{t('role_label')}</p>
-            <p className="mt-4 text-base md:text-lg leading-relaxed text-text-body">{t('tagline')}</p>
-          </div>
+          <p className="max-w-xl text-base md:text-lg leading-relaxed text-text-body">{t('tagline')}</p>
           <p className="font-mono text-[13px] tracking-[0.12em] text-text-secondary">{t('location')}</p>
         </motion.div>
       </motion.div>

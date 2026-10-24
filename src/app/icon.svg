@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- "c." monogram, same as the navbar logo: the letter in text colour, the dot in accent -->
+  <rect width="32" height="32" rx="7" fill="#0b0d12"/>
+  <path d="M19.1 11.2 A7 7 0 1 0 19.1 20.8" fill="none" stroke="#eef0f3" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="24.6" cy="21" r="2.4" fill="#818cf8"/>
+</svg>

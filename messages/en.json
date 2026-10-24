@@ -7,9 +7,8 @@
   },
   "hero": {
     "name": "Chema",
-    "tagline": "I build AI-powered proofs of concept at NTT DATA's Innovation Center in Barcelona. I lead a platform that uses AI agents to prepare visits on real screens, and I work on a research project with robots.",
+    "tagline": "I build AI products end to end: the agents, the interfaces and the cloud they run on. Right now I lead a platform where AI agents prepare visits on real screens, and I work on a research project with robots.",
     "surname": "Rodríguez",
-    "status": "NTT DATA Innovation Center",
     "role_label": "AI Software Engineer",
     "location": "Barcelona, Spain"
   },
@@ -144,6 +143,6 @@
   },
   "metadata": {
     "title": "Chema Rodríguez | AI Software Engineer",
-    "description": "Software engineer at NTT DATA's Innovation Center in Barcelona. AI agents, React, FastAPI and Azure."
+    "description": "AI Software Engineer in Barcelona. I build AI products end to end: agents, React, FastAPI and Azure."
   }
 }

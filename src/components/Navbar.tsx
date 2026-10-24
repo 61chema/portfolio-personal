@@ -2,17 +2,11 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { useLocaleSwitch } from '@/providers/LocaleProvider'
 import { motion } from 'framer-motion'
 
 export default function Navbar() {
   const t = useTranslations('nav')
-  const { locale, setLocale } = useLocaleSwitch()
   const [menuOpen, setMenuOpen] = useState(false)
-
-  const toggleLanguage = () => {
-    setLocale(locale === 'en' ? 'es' : 'en')
-  }
 
   const navLinks = [
     { href: '#about', label: t('about') },
@@ -26,7 +20,7 @@ export default function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 bg-navy/80 backdrop-blur-md border-b border-line"
+      className="fixed top-0 left-0 right-0 z-50 bg-navy/80 backdrop-blur-md"
     >
       {/* Mobile: logo | controls. Desktop: three columns, logo | centered links | controls */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
@@ -53,15 +47,8 @@ export default function Navbar() {
           </ol>
         </nav>
 
+        {/* Empty on desktop: keeps the links centred in the three-column grid */}
         <div className="justify-self-end flex items-center gap-3">
-          {/* Language toggle: shows the language you would switch to */}
-          <button
-            onClick={toggleLanguage}
-            className="font-mono text-xs tracking-[0.18em] text-text-secondary hover:text-text-primary border border-line hover:border-text-secondary/50 rounded-full min-w-11 h-9 px-3 transition-colors duration-200"
-          >
-            {locale === 'en' ? 'ES' : 'EN'}
-          </button>
-
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}

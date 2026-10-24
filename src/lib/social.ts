@@ -11,5 +11,3 @@ export const CV_FILE = {
   href: '/cv_chema.pdf',
   downloadName: 'Chema_Rodriguez_CV.pdf',
 } as const
-
-export const SITE_URL = 'https://chema.dev'

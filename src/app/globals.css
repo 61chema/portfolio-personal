@@ -136,8 +136,11 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .caret-blink,
   .live-dot {
     animation: none;
+  }
+  /* A caret that does not blink reads as a letter, so hide it instead */
+  .caret-blink {
+    display: none;
   }
 }

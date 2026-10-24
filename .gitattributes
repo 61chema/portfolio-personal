@@ -1,0 +1,5 @@
+# Never convert line endings in binary files (the CV PDF has no NUL bytes, so git would treat it as text)
+*.pdf binary
+*.ttf binary
+*.ico binary
+*.png binary
